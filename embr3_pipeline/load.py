@@ -1,13 +1,12 @@
-def load_data(historico_df, info_df, dividendos_df, output_dir="data"):
+def load_data(dfs: dict, output_dir="data"):
     import os
+    
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    output_path = os.path.join(base_dir, output_dir)
 
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    os.makedirs(output_path, exist_ok=True)
 
-    historico_df.to_csv(f"{output_dir}/historico.csv", index=False)     
+    for name, df in dfs.items():
+        df.to_csv(os.path.join(output_path, f"{name}.csv"), index=False)
 
-    info_df.to_csv(f"{output_dir}/info.csv", index=False)
-
-    dividendos_df.to_csv(f"{output_dir}/dividendos.csv", index=False)
-
-    print(f"Arquivos salvos em: {output_dir}/")
+    print(f"Arquivos salvos em:{output_path}")
