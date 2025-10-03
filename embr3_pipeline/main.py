@@ -15,6 +15,12 @@ def main():
     historico_df, info_df, dividendos_df = transform_data(history, info, dividends)
     logging.info(f"Transformação concluída.")
 
+    dfs = {
+         "historico": historico_df,
+         "info": info_df,
+         "dividendos": dividendos_df
+    }
+
     load_data(historico_df, info_df, dividendos_df, output_dir="data")
     logging.info(f"Tudo salvo na pasta 'data/'.")
 
