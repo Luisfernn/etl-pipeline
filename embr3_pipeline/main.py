@@ -21,7 +21,7 @@ def main():
          "dividendos": dividendos_df
     }
 
-    load_data(historico_df, info_df, dividendos_df, output_dir="data")
+    load_data(dfs, output_dir="data")
     logging.info(f"Tudo salvo na pasta 'data/'.")
 
     logging.info(f"Prévia dos dados salvos e tranformados:")
