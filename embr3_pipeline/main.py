@@ -32,7 +32,7 @@ def main():
     print(info_df.head(), "\n")
 
     print("Dividendos:")
-    print(dividendos_df.head, "\n")
+    print(dividendos_df.head(), "\n")
 
 
 if __name__ == '__main__':
