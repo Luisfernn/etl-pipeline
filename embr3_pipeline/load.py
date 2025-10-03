@@ -1,6 +1,12 @@
-def load_data(dfs: dict, output_dir="data"):
+def load_data(dfs, output_dir="data"):
     import os
     
+    df = {
+        "historico": historico_df,
+        "info": info_df,
+        "dividendos": dividendos_df
+    }
+     
     base_dir = os.path.dirname(os.path.abspath(__file__))
     output_path = os.path.join(base_dir, output_dir)
 
