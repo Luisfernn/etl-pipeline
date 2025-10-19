@@ -6,7 +6,7 @@ from load import load_data
 logging.basicConfig(level=logging.INFO)
 
 def main():
-    ticker = "MFST"
+    ticker = "MSFT"
     logging.info(f"[INFO] Iniciando pipeline para {ticker}")
 
     history, info, dividends = extract_data(ticker)
